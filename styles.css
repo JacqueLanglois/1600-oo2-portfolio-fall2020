@@ -14,9 +14,13 @@ html{
 
 
 #navbar {
+    background-color: rgb(255, 173, 186);
+    position: fixed;
     display: flex;
     justify-content: flex-end;
-    background-color: rgb(255, 173, 186);
+    top: 0;
+    left: 0;
+    width: 100%;   
 }
 .nav-list{
     display: flex;
@@ -89,8 +93,9 @@ h1 {
     transform: translateY(8px);
   }
 
-  @media screen and (max max-width 28.75em){
-      .contact-links
+  @media screen and (max-width: 50em) {
+      .contact-links {
       flex-direction: column;
       align-items: center;
- }
+    }
+  }
