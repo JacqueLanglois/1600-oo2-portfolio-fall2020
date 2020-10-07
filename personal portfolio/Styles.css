@@ -1,0 +1,116 @@
+@import url(https://fonts.googleapis.com/css?family=Cherry+Swash);  
+
+body {
+    background-color: #FFF0DB;
+    width: 960px;
+    margin: auto;
+    font-family: 'Cherry Swash';
+  }
+
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+#header img { 
+    height: 90px;
+  }
+
+#bio {
+    display: flex;
+  }
+
+#bio img{
+    width: 210px;
+    height: 210px;
+    margin: 0px;
+  }
+
+#bio-choose {
+    width: 100%;  
+  }
+
+#name-date {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+
+#name-date h2 {
+    margin: 0;
+    font-size: 1.75rem;
+    padding-left: 8px;
+    color: black;
+  }
+
+time {
+    font-size: 1.75rem;
+    font-style: bold;
+    color:black;
+  
+  }
+
+#choose-list h4{
+    margin: 0;
+  }
+
+#choose-list{ 
+    padding-left: 20px;
+    background-color: #FFF5C7;
+  }
+
+
+ul{
+    padding: 15px;
+    margin-bottom: 0;
+    color: #6F6D35;
+  }
+
+#tech {
+    display: flex;
+    justify-content: space-between;
+  }
+
+figure {
+    margin: 20px 0px;
+    text-align: center;
+  }
+figure img {
+    max-height:  150px;
+    max-width: 150px;
+    text-align: center;
+    margin: 0px;
+  }
+
+figcaption {
+    background-color: rgba(255, 245, 199, .5);
+    width: 180px;
+    text-align: center;
+    position: relative;
+    top: -15px;
+  }
+
+h2 {
+    color: #6F6D35 ;
+  }
+
+#excited-about{
+    background-color: #FFF5C7;
+    padding: 0px;
+  }
+
+#excited-about h4 {
+    margin: 0px 0px;
+  }
+
+p {
+    color: #6F6D35;
+  }
+
+footer {
+    margin: 0;
+    font: 20px;
+    display: flex;
+    justify-content: center;
+  }
