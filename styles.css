@@ -5,9 +5,46 @@ margin: 0;
 padding: 0;
 background-color: rgb(188, 188, 248);}
 
-nav {
-    background-color: pink;
+html{
+    box-sizing: border-box;
+    scroll-behavior: smooth ;
 }
-.project-tile img{
+#navbar {
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgb(255, 173, 186);
+}
+.nav-list{
+    display: flex;
+    list-style-type: none;
+    margin-right: 2rem;
+}
+
+.nav-list a {
+    display: block;
+    font-size: 2rem;
+    padding: 2rem;
+    margin: 0px;
+}
+
+.nav-list a:hover {
+    background: rgb(216, 128, 142) ;
+}
+
+#welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: pink;
+    background-image: linear-gradient(pink 0%, rgb(188, 188, 248)100%);
+}
+
+figure img{
     width: 200px;
+}
+
+h1 {
+    font-size: 3rem;
 }
