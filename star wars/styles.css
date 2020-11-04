@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poller+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geostar+Fill&display=swap');
+
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background-color: black;
+}
+
+h1 {
+    font-family: 'Geostar Fill', cursive;
+    color:khaki;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+figure {
+    margin: 1rem;
+    
+}
+
+figcaption {
+    font-family: 'Poller One', cursive;
+    text-align: center;
+    background-color: khaki;
+    
+
+}
