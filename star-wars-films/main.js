@@ -1,7 +1,4 @@
-import { films } from './Data/films.js'
-import { species } from './Data/species.js'
-
-//console.log(species.length)
+import { films } from '../Data/films.js'
 
 const main = document.querySelector('main')
 
@@ -17,4 +14,3 @@ for (let i = 0; i < 7; i++) {
 
     main.appendChild(figure)
 } 
-
