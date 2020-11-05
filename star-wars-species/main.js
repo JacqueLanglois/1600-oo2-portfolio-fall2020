@@ -1,32 +1,50 @@
-import { creatures } from '../Data/species.js'
+import { species } from '../Data/species.js'
 
-const mainheader = document.createElement('header')
-document.body.appendChild(mainheader)
+const mainContent = document.querySelector('#main')
 
-const film1Button = document.createElement('button')
-film1Button.textContent = 'A New Hope'
-mainheader.appendChild(film1Button)
+const mainHeader = document.createElement('header')
+mainHeader.className = 'mainHeader'
+document.body.appendChild(mainHeader)
 
-const film2Button = document.createElement('button')
-film2Button.textContent = 'The Empire Strikes Back'
-mainheader.appendChild(film2Button)
 
-const film3Button = document.createElement('button')
-film3Button.textContent = 'Return of The Jedi'
-mainheader.appendChild(film3Button)
+const hopeButton = document.createElement('button')
+hopeButton.textContent = 'A New Hope'
+mainHeader.appendChild(hopeButton)
 
-const film4Button = document.createElement('button')
-film4Button.textContent = 'The Phantom Menace'
-mainheader.appendChild(film4Button)
+const empireButton = document.createElement('button')
+empireButton.textContent = 'The Empire Strikes Back'
+mainHeader.appendChild(empireButton)
 
-const film5Button = document.createElement('button')
-film5Button.textContent = 'Attack of the Clones'
-mainheader.appendChild(film5Button)
+const jediButton = document.createElement('button')
+jediButton.textContent = 'Return of The Jedi'
+mainHeader.appendChild(jediButton)
+
+const phantomButton = document.createElement('button')
+phantomButton.textContent = 'The Phantom Menace'
+mainHeader.appendChild(phantomButton)
+
+const clonesButton = document.createElement('button')
+clonesButton.textContent = 'Attack of the Clones'
+mainHeader.appendChild(clonesButton)
 
 const film6Button = document.createElement('button')
 film6Button.textContent = 'Revenge of the Sith'
-mainheader.appendChild(film6Button)
+mainHeader.appendChild(film6Button)
 
-const film7Button = document.createElement('button')
-film7Button.textContent = 'The Force Awakens'
-mainheader.appendChild(film7Button)
+const forceButton = document.createElement('button')
+forceButton.textContent = 'The Force Awakens'
+mainHeader.appendChild(forceButton)
+
+const hopeSpecies = species.filter( character.film === 'https://swapi.co/api/films/1/')
+console.log(hopeSpecies)
+
+hopeButton.addEventListener('click', (event) => {
+    const charFigure =document.createElement('figure')
+    const charImg = document.createElement('img')
+    const charCaption = document.createElement('figcaption')
+
+    charFigure.appendChild(charImg)
+    charFigure.appendChild(charCaption)
+
+    mainContent.appendChild(charFigure)
+})
