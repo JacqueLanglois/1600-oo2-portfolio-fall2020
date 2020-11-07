@@ -35,12 +35,13 @@ const forceButton = document.createElement('button')
 forceButton.textContent = 'The Force Awakens'
 mainHeader.appendChild(forceButton)
 
-const hopeSpecies = species.filter( character.film === 'https://swapi.co/api/films/1/')
+const hopeSpecies = species.filter(Character => species.films === 'https://swapi.co/api/films/1/')
 console.log(hopeSpecies)
 
 hopeButton.addEventListener('click', (event) => {
-    const charFigure =document.createElement('figure')
+    const charFigure = document.createElement('figure')
     const charImg = document.createElement('img')
+    charImg.src = `https://starwars-visualguide.com/assets/img/species/1.jpg`
     const charCaption = document.createElement('figcaption')
 
     charFigure.appendChild(charImg)
@@ -48,3 +49,5 @@ hopeButton.addEventListener('click', (event) => {
 
     mainContent.appendChild(charFigure)
 })
+
+//`https://starwars-visualguide.com/assets/img/species/1.jpg`
