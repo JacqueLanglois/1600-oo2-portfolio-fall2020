@@ -4,7 +4,7 @@ const mainContent = document.querySelector('#main')
 
 const mainHeader = document.createElement('header')
 mainHeader.className = 'mainHeader'
-document.body.appendChild(mainHeader)
+document.body.insertBefore(mainHeader, mainContent)
 
 
 const hopeButton = document.createElement('button')
@@ -35,19 +35,24 @@ const forceButton = document.createElement('button')
 forceButton.textContent = 'The Force Awakens'
 mainHeader.appendChild(forceButton)
 
-const hopeSpecies = species.filter(Character => species.films === 'https://swapi.co/api/films/1/')
+const hopeSpecies = species.filter(species => species.eye_colors === 'yellow')
 console.log(hopeSpecies)
 
 hopeButton.addEventListener('click', (event) => {
-    const charFigure = document.createElement('figure')
-    const charImg = document.createElement('img')
-    charImg.src = `https://starwars-visualguide.com/assets/img/species/1.jpg`
-    const charCaption = document.createElement('figcaption')
+    hopeSpecies.forEach(element => {
+        const charFigure = document.createElement('figure')
+        const charImg = document.createElement('img')
+        charImg.src = `https://starwars-visualguide.com/assets/img/species/1.jpg`
+        const charCaption = document.createElement('figcaption')
+        charCaption.textContent = element.name
 
-    charFigure.appendChild(charImg)
-    charFigure.appendChild(charCaption)
+        charFigure.appendChild(charImg)
+        charFigure.appendChild(charCaption)
 
-    mainContent.appendChild(charFigure)
+        mainContent.appendChild(charFigure)
+
+    })
+
 })
 
 //`https://starwars-visualguide.com/assets/img/species/1.jpg`

@@ -13,10 +13,7 @@ export const species = [
         "people": [
             "https://swapi.co/api/people/16/"
         ],
-        "films": [
-            "https://swapi.co/api/films/3/",
-            "https://swapi.co/api/films/1/"
-        ],
+        "films": "https://swapi.co/api/films/3/, https://swapi.co/api/films/1/",
         "created": "2014-12-10T17:12:50.410000Z",
         "edited": "2014-12-20T21:36:42.146000Z",
         "url": "https://swapi.co/api/species/5/"
@@ -841,8 +838,8 @@ export const species = [
     },
     {
         "name": "Rodian",
-        "classification": "sentient",
-        "designation": "reptilian",
+        "classification": "reptilian",
+        "designation": "sentient",
         "average_height": "170",
         "skin_colors": "green, blue",
         "hair_colors": "n/a",
