@@ -35,8 +35,17 @@ const forceButton = document.createElement('button')
 forceButton.textContent = 'The Force Awakens'
 mainHeader.appendChild(forceButton)
 
-const hopeSpecies = species.filter(species => species.eye_colors === 'yellow')
+const hopeSpecies = species.filter(species => species.designation === 'hope')
 console.log(hopeSpecies)
+
+
+/*var films = ['https://swapi.co/api/films/1/', 'https://swapi.co/api/films/2/', 'https://swapi.co/api/films/3/', 'https://swapi.co/api/films/4/', 'https://swapi.co/api/films/5/', 'https://swapi.co/api/films/6/', 'https://swapi.co/api/films/7/'];
+
+function hopeSpecies(films) {
+  return films >= 'https://swapi.co/api/films/1/';
+} */
+
+
 
 hopeButton.addEventListener('click', (event) => {
     hopeSpecies.forEach(element => {
