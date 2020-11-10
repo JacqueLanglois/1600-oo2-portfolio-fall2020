@@ -36,7 +36,6 @@ const enbyPeople = people.filter(person => {
 })
 
 
-
 maleButton.addEventListener('click', (event) => {
     populateDOM(malePeople)
 })
