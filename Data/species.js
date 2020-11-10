@@ -2,7 +2,7 @@ export const species = [
     {
         "name": "Hutt",
         "classification": "gastropod",
-        "designation": "sentient",
+        "designation": "sentient, hope",
         "average_height": "300",
         "skin_colors": "green, brown, tan",
         "hair_colors": "n/a",
@@ -13,7 +13,10 @@ export const species = [
         "people": [
             "https://swapi.co/api/people/16/"
         ],
-        "films": "https://swapi.co/api/films/3, https://swapi.co/api/films/1/","created": "2014-12-10T17:12:50.410000Z",
+        "films": [
+            "https://swapi.co/api/films/3", "https://swapi.co/api/films/1/"
+        ],
+        "created": "2014-12-10T17:12:50.410000Z",
         "edited": "2014-12-20T21:36:42.146000Z",
         "url": "https://swapi.co/api/species/5/"
     },
