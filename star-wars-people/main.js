@@ -1,7 +1,9 @@
 import { people } from '../Data/people.js'
 
-const mainContent = document.querySelector('#main')
 
+
+const mainContent = document.querySelector('#main')
+populateDOM(people)
 const mainHeader = document.createElement('header')
 mainHeader.className = 'mainHeader'
 document.body.insertBefore(mainHeader, mainContent)
@@ -20,9 +22,18 @@ mainHeader.appendChild(enbyButton)
 
 
 
-const malePeople = people.filter(person => people.gender === 'male')
+const malePeople = people.filter(person => person.gender === 'male')
 
 const femalePeople = people.filter(person => person.gender === 'female')
+
+const enbyPeople = people.filter(person => {
+    if (person.gender === 'n/a' ||
+        person.gender === 'none' ||
+        person.gender === 'hermaphrodite') {
+        return person
+    }
+
+})
 
 
 
@@ -31,6 +42,8 @@ maleButton.addEventListener('click', (event) => {
 })
 
 femaleButton.addEventListener('click', () => populateDOM(femalePeople))
+
+enbyButton.addEventListener('click', () => populateDOM(enbyPeople))
 
 function populateDOM(characters) {
     removeChildren(mainContent)
