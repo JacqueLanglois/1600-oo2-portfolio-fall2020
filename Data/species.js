@@ -2,7 +2,7 @@ export const species = [
     {
         "name": "Hutt",
         "classification": "gastropod",
-        "designation": "sentient, hope",
+        "designation": "sentient",
         "average_height": "300",
         "skin_colors": "green, brown, tan",
         "hair_colors": "n/a",
