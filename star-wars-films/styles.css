@@ -34,3 +34,6 @@ figcaption {
     
 
 }
+figure img {
+    max-height: 25rem;
+}

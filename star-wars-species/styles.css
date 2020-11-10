@@ -1,6 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poller+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geostar+Fill&display=swap');
+
+
 * {
     margin: 0;
     box-sizing: border-box;
+}
+
+button {
+    margin: 15px;
+    border: 2px;
+    font-family: 'Geostar Fill', cursive;
+    color: black;
+    background-color: khaki;
+}
+
+body {
+    background-color: black;
 }
 
 .mainHeader {
@@ -10,10 +26,17 @@
 
 #main {
     display: flex;
-    flex: wrap;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
+figure {
+    font-family: 'Poller One',cursive;
+    text-align: center;
+    color: khaki;
+}
+
 figure img {
-    max-height: 12rem;
+    max-height: 17rem;
+    
 }

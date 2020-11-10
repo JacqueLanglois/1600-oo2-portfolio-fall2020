@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital@1&display=swap');
 
 body {
 margin: 0;
@@ -82,6 +82,8 @@ figure img{
 figcaption {
     display: flex;
     justify-content: center;
+    font-size: 12px;
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
 h1 {
