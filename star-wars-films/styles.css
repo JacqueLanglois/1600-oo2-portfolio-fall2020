@@ -30,10 +30,10 @@ figure {
 figcaption {
     font-family: 'Poller One', cursive;
     text-align: center;
-    background-color: khaki;
+    color: khaki;
     
 
 }
 figure img {
-    max-height: 25rem;
+    max-height: 22rem;
 }

@@ -22,6 +22,7 @@ html{
     left: 0;
     width: 100%;   
 }
+
 .nav-list{
     display: flex;
     list-style-type: none;
@@ -39,12 +40,13 @@ html{
 .nav-list a:hover {
     background: rgb(216, 128, 142) ;
 }
+
 a {
     text-decoration: none;
     color: black;
     justify-content: center;
-   
 }
+
 #welcome-section {
     display: flex;
     flex-direction: column;
@@ -60,7 +62,6 @@ a {
     padding: 2rem 2rem;
     background: pink;
     height: 100%;
-    
 }
 
 .projects-grid {
@@ -71,12 +72,12 @@ a {
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    margin-bottom: 6rem;
-    
+    margin-bottom: 6rem; 
 }
 
 figure img{
     width: 200px;
+    height: auto;
 }
 
 figcaption {
@@ -96,9 +97,7 @@ h1 {
     display: inline-block;
     padding: 1rem 2rem;
     border-radius: 2px;
-    
-  }
-  
+}
   
 .contact-links {
     display: flex;
