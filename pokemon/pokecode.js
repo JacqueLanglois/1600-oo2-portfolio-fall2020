@@ -5,3 +5,5 @@ async function loadData() {
     const data =await response.json()
     populatePokePage(data)
 }
+
+//https://pokeapi.co/api/v2/pokemon/munna
