@@ -9,7 +9,7 @@ async function getAPIData(url) {
 }
 
 function loadPage() {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon/munna`).them
+    getAPIData(`https://pokeapi.co/api/v2/pokemon/`).them
     (async (data) => {
         for (const pokemon of data.results) {
             await getAPIData(pokemon.url).then((pokeData) => {populatePokeCard(pokedata)
