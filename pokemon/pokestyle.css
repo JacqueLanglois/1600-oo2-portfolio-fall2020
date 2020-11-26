@@ -7,4 +7,6 @@
 
 .pokecard {
     background-color: yellow;
+    justify-content: center;
+    flex-wrap: wrap;
 }
