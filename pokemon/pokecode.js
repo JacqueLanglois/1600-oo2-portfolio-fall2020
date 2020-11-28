@@ -9,16 +9,38 @@ async function getAPIData(url) {
 }
 
 function loadPage() {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon/`).them
-    (async (data) => {
-        for (const pokemon of data.results) {
-            await getAPIData(pokemon.url).then((pokeData) => {populatePokeCard(pokedata)
-            })
-        }
-    })
+    getAPIData(`https://pokeapi.co/api/v2/pokemon/`).then
+        (async (data) => {
+            for (const pokemon of data.results) {
+                await getAPIData(pokemon.url).then((pokeData) => {
+                    populatePokeCard(pokeData)
+                })
+            }
+        })
 }
 
 const pokeGrid = document.querySelector('.pokemonGrid')
+
+function populatePokeCard(singlePokemon) {
+    let pokeScene = document.createElement('div')
+    pokeScene.className = 'scene'
+    let pokeCard = document.createElement('div')
+    pokeCard.className = 'card'
+    let pokeFront = document.createElement('div')
+    let pokeBack = document.createElement('div')
+
+    let frontLabel = document.createElement('p')
+    frontLabel.textContent = singlePokemon.name
+    let frontImage = document.createElement('img')
+    frontImage.src = `../images/pokemon/00${singlePokemon.id}.png`
+
+    pokeFront.appendChild(frontLabel)
+    pokeCard.appendChild(pokeFront)
+    pokeCard.appendChild(pokeBack)
+    pokeScene.appendChild(pokeCard)
+    pokeGrid.appendChild(pokeScene)
+}
+
 const loadButton = document.querySelector('button')
 
 
@@ -26,7 +48,7 @@ const loadButton = document.querySelector('button')
 
 async function loadData() {
     const response = await fetch('')
-    const data =await response.json()
+    const data = await response.json()
     populatePokePage(data)
 }
 
