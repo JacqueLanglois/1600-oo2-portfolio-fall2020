@@ -52,5 +52,4 @@ async function loadData() {
     populatePokePage(data)
 }
 
-//
-//https://github.com/fanzeyi/pokemon.json/blob/master/images/517.png
+/*https://github.com/fanzeyi/pokemon.json/blob/master/images/517.png*/
