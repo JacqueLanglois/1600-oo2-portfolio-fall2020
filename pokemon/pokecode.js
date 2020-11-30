@@ -1,6 +1,6 @@
 async function getAPIData(url) {
     try {
-        const responce = await fetch(url)
+        const response = await fetch(url)
         const data = await response.json()
         return data
     } catch (error) {
@@ -43,13 +43,5 @@ function populatePokeCard(singlePokemon) {
 
 const loadButton = document.querySelector('button')
 
-
-
-
-async function loadData() {
-    const response = await fetch('')
-    const data = await response.json()
-    populatePokePage(data)
-}
-
+loadPage()
 /*https://github.com/fanzeyi/pokemon.json/blob/master/images/517.png*/
