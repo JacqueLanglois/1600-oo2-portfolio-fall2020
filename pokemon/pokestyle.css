@@ -5,14 +5,23 @@
     
 }
 
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .pokemonGrid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.pokecard {
+.scene {
     background-color: yellow;
     width: 200px;
-    height: 250px;
+    height: 260px;
+    border: 1px solid #CCC;
+    margin: 10px 0;
+    perspective: 600px;
 }
