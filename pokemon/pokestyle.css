@@ -17,6 +17,13 @@ header {
     justify-content: center;
 }
 
+img {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+
+}
+
 .scene {
     background-color: yellow;
     width: 200px;
