@@ -34,6 +34,7 @@ function populatePokeCard(singlePokemon) {
     let frontImage = document.createElement('img')
     frontImage.src = `../images/pokemon/00${singlePokemon.id}.png`
 
+    pokeFront.appendChild(frontImage)
     pokeFront.appendChild(frontLabel)
     pokeCard.appendChild(pokeFront)
     pokeCard.appendChild(pokeBack)
