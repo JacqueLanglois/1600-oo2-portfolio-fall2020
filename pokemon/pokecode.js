@@ -26,28 +26,41 @@ function populatePokeCard(singlePokemon) {
     pokeScene.className = 'scene'
     let pokeCard = document.createElement('div')
     pokeCard.className = 'card'
-   pokeCard.addEventListener( 'click', function() {
-       pokeCard.classList.toggle('is-flipped')
-   })
-    let pokeFront = document.createElement('div')
-    let pokeBack = document.createElement('div')
+    pokeCard.addEventListener('click', function () {
+        pokeCard.classList.toggle('is-flipped')
+    })
 
-    let frontLabel = document.createElement('p')
-    frontLabel.textContent = singlePokemon.name
-    let frontImage = document.createElement('img')
-    frontImage.src = `../images/pokemon/${getImageFileName(singlePokemon)}.png`
 
-    let backLabel = document.createElement('p')
-    backLabel.textContent = `${singlePokemon.abilities.length} abilities`
+
+
+
+    
     pokeBack.appendChild(backLabel)
-
-    pokeFront.appendChild(frontImage)
-    pokeFront.appendChild(frontLabel)
-    pokeCard.appendChild(pokeFront)
+    pokeCard.appendChild(populateCardFront(singlePokemon))
     pokeCard.appendChild(pokeBack)
     pokeScene.appendChild(pokeCard)
     pokeGrid.appendChild(pokeScene)
 }
+
+function populateCardFront(pokemon) {
+    let pokeFront = document.createElement('div')
+    pokeFront.className = 'card_face'
+    let frontLabel = document.createElement('p')
+    frontLabel.textContent = pokemon.name
+    let frontImage = document.createElement('img')
+    frontImage.src = `../images/pokemon/${getImageFileName(pokemon)}.png` 
+    pokeFront.appendChild(frontImage)
+    pokeFront.appendChild(frontLabel)
+    return pokeFront
+}
+
+function populateCardBack(pokemon){
+    let pokeBack = document.createElement('div')
+    pokeBack.className = 'card_face'
+    let backLabel = document.createElement('p')
+    backLabel.textContent = `${singlePokemon.abilities.length} abilities`
+}
+
 
 function getImageFileName(pokemon) {
     if (pokemon.id < 10) {
