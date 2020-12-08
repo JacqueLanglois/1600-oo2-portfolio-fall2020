@@ -19,22 +19,21 @@ header {
 
 img {
     width: 200px;
-   
+    height: 200px;
 }
 
 .scene {
-    background-color: yellow;
     width: 200px;
-    height: 260px;
+    height: 240px;
     border: 1px solid #CCC;
-    margin: 10px 0;
+    margin: 10px;
     perspective: 600px;
 }
 
 .card {
     width: 100%;
     height: 100%;
-    transition: transform 1s;
+    transition: transform 1000ms;
     transform-style: preserve-3d;
     cursor: pointer;
     position: relative;
@@ -45,6 +44,16 @@ img {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
+}
+
+.card__face--front {
+    background: red;
+}
+
+.card__face--back { 
+    background: blue;
+    color: cornsilk;
+    transform: rotateY(180deg);
 }
 
 .card.is-flipped {

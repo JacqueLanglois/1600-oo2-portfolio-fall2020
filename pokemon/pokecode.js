@@ -39,7 +39,7 @@ function populatePokeCard(singlePokemon) {
 
 function populateCardFront(pokemon) {
     let pokeFront = document.createElement('div')
-    pokeFront.className = 'card_face'
+    pokeFront.className = 'card__face card__face--front'
     let frontLabel = document.createElement('p')
     frontLabel.textContent = pokemon.name
     let frontImage = document.createElement('img')
@@ -51,7 +51,7 @@ function populateCardFront(pokemon) {
 
 function populateCardBack(pokemon) {
     let pokeBack = document.createElement('div')
-    pokeBack.className = 'card_face'
+    pokeBack.className = 'card__face card__face--back'
     let backLabel = document.createElement('p')
     backLabel.textContent = `${pokemon.abilities.length} abilities`
     pokeBack.appendChild(backLabel)
@@ -64,6 +64,8 @@ function getImageFileName(pokemon) {
         return `00${pokemon.id}`
     } else if (pokemon.id > 9 && pokemon.id < 100) {
         return `0${pokemon.id}`
+    } else if (pokemon.id > 99&& pokemon.id < 810) {
+        return`${pokemon.id}`
     }
 }
 
