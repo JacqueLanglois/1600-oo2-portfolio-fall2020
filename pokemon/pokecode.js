@@ -16,7 +16,7 @@ function loadPage() {
                     populatePokeCard(pokeData)
                 })
             }
-        })
+    })
 }
 
 const pokeGrid = document.querySelector('.pokemonGrid')
@@ -26,7 +26,7 @@ function populatePokeCard(singlePokemon) {
     pokeScene.className = 'scene'
     let pokeCard = document.createElement('div')
     pokeCard.className = 'card'
-    pokeCard.addEventListener('click', function () {
+    pokeCard.addEventListener( 'click', function () {
         pokeCard.classList.toggle('is-flipped')
     })
 

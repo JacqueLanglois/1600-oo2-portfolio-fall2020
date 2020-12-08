@@ -2,7 +2,6 @@
 * {
     margin: 0px;
     box-sizing: border-box;
-    
 }
 
 header {
@@ -51,7 +50,7 @@ img {
 }
 
 .card__face--back { 
-    background: blue;
+    background: yellow;
     color: cornsilk;
     transform: rotateY(180deg);
 }
