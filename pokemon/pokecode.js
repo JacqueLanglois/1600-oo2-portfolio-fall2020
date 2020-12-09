@@ -9,7 +9,7 @@ async function getAPIData(url) {
 }
 
 function loadPage() {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon/`).then
+    getAPIData(`https://pokeapi.co/api/v2/pokemon`).then//?limit=25&offset=800
         (async (data) => {
             for (const pokemon of data.results) {
                 await getAPIData(pokemon.url).then((pokeData) => {
@@ -20,6 +20,12 @@ function loadPage() {
 }
 
 const pokeGrid = document.querySelector('.pokemonGrid')
+const loadButton = document.querySelector('button')
+
+loadButton.addEventListener('click', () => {
+    loadPage()
+    loadButton.hidden = true
+})
 
 function populatePokeCard(singlePokemon) {
     let pokeScene = document.createElement('div')
@@ -54,10 +60,14 @@ function populateCardBack(pokemon) {
     pokeBack.className = 'card__face card__face--back'
     let backLabel = document.createElement('p')
     backLabel.textContent = `${pokemon.abilities.length} abilities`
+    backLabel.addEventListener('click', () => getAbilitiesDetails(pokemon.abilities))
     pokeBack.appendChild(backLabel)
     return pokeBack
 }
 
+function getAbilitiesDetails(pokemonAbilities){
+    console.log(pokemonAbilities)
+}
 
 function getImageFileName(pokemon) {
     if (pokemon.id < 10) {
@@ -69,7 +79,5 @@ function getImageFileName(pokemon) {
     }
 }
 
-const loadButton = document.querySelector('button')
 
-loadPage()
 /*https://github.com/fanzeyi/pokemon.json/blob/master/images/517.png*/
