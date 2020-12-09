@@ -20,7 +20,14 @@ function loadPage() {
 }
 
 const pokeGrid = document.querySelector('.pokemonGrid')
-const loadButton = document.querySelector('button')
+const loadButton = document.querySelector('.load')
+const newPokemonButton = document.querySelector('.newPokemon')
+
+newPokemonButton.addEventListener('click', () => {
+    let pokeName = prompt('pick a Pokename')
+    let newPokemon = new Pokemon ('')
+})
+
 
 loadButton.addEventListener('click', () => {
     loadPage()
@@ -65,8 +72,9 @@ function populateCardBack(pokemon) {
     return pokeBack
 }
 
-function getAbilitiesDetails(pokemonAbilities){
-    console.log(pokemonAbilities)
+function getAbilitiesDetails(pokemonAbilities) {
+    const abilitiesUrl = pokemonAbilities[0].abilities.url
+    return getAPIData(abilitiesUrl).then((data) => data.type.name)
 }
 
 function getImageFileName(pokemon) {
@@ -79,5 +87,16 @@ function getImageFileName(pokemon) {
     }
 }
 
+function pokemon(name, height, weight, abilities) {
+    this.name = name
+    this.height = height
+    this.weight = weight
+    this.abilities = abilities
+    this.id = 900
+}
+
+
+ 
+console.log(newPokemon)
 
 /*https://github.com/fanzeyi/pokemon.json/blob/master/images/517.png*/
