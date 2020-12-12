@@ -96,7 +96,4 @@ function pokemon(name, height, weight, abilities) {
 }
 
 
- 
-console.log(newPokemon)
-
 /*https://github.com/fanzeyi/pokemon.json/blob/master/images/517.png*/
