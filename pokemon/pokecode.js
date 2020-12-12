@@ -72,9 +72,10 @@ function populateCardBack(pokemon) {
     return pokeBack
 }
 
-function getAbilitiesDetails(pokemonAbilities) {
+async function getAbilitiesDetails(pokemonAbilities) {
     const abilitiesUrl = pokemonAbilities[0].abilities.url
-    return getAPIData(abilitiesUrl).then((data) => data.type.name)
+    const abilitiesData = await getAPIData(abilitiesUrl)
+    console.log (getAPIData(abilitiesUrl).then((data) => data.type.name))
 }
 
 function getImageFileName(pokemon) {
