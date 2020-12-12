@@ -25,7 +25,12 @@ const newPokemonButton = document.querySelector('.newPokemon')
 
 newPokemonButton.addEventListener('click', () => {
     let pokeName = prompt('pick a Pokename')
-    let newPokemon = new Pokemon ('')
+    let newPokemon = new Pokemon (pokeName, 
+        400, 
+        200, 
+        ['javaScript', 'html', 'css']
+        ['allNighter', 'homeWork', 'loans'])
+    populatePokeCard(newPokemon)
 })
 
 
@@ -66,16 +71,22 @@ function populateCardBack(pokemon) {
     let pokeBack = document.createElement('div')
     pokeBack.className = 'card__face card__face--back'
     let backLabel = document.createElement('p')
-    backLabel.textContent = `${pokemon.abilities.length} abilities`
-    backLabel.addEventListener('click', () => getAbilitiesDetails(pokemon.abilities))
+    backLabel.textContent = `${pokemon.moves.length} moves`
+    backLabel.addEventListener('click', () => getMovesDetails(pokemon.moves))
     pokeBack.appendChild(backLabel)
     return pokeBack
 }
 
-async function getAbilitiesDetails(pokemonAbilities) {
-    const abilitiesUrl = pokemonAbilities[0].abilities.url
-    const abilitiesData = await getAPIData(abilitiesUrl)
-    console.log (getAPIData(abilitiesUrl).then((data) => data.type.name))
+function getMoveDetails(pokemonMoves) {
+
+    const nonNullMoves = pokemonMoves.filter(async (move) => {
+        if (!move.move.url) return
+        const moveData = await getAPIData(move.move.url)
+        console.log(movesData.accuracy, moveData.power) 
+        if ((moveData.accuracy && moveData.power) == null) {
+            return moveData
+        }
+    })
 }
 
 function getImageFileName(pokemon) {
@@ -86,14 +97,16 @@ function getImageFileName(pokemon) {
     } else if (pokemon.id > 99&& pokemon.id < 810) {
         return`${pokemon.id}`
     }
+    //return 'pokeball'
 }
 
-function pokemon(name, height, weight, abilities) {
+function pokemon(name, height, weight, abilities, moves) {
     this.name = name
     this.height = height
     this.weight = weight
     this.abilities = abilities
     this.id = 900
+    this.moves = moves
 }
 
 
