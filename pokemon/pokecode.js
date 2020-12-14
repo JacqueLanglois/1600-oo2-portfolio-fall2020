@@ -9,7 +9,7 @@ async function getAPIData(url) {
 }
 
 function loadPage() {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon`).then//?limit=25&offset=800
+    getAPIData(`https://pokeapi.co/api/v2/pokemon`).then
         (async (data) => {
             for (const pokemon of data.results) {
                 await getAPIData(pokemon.url).then((pokeData) => {
@@ -20,7 +20,7 @@ function loadPage() {
 }
 
 const pokeGrid = document.querySelector('.pokemonGrid')
-const loadButton = document.querySelector('.load')
+const loadButton = document.querySelector('button')
 const newPokemonButton = document.querySelector('.newPokemon')
 
 newPokemonButton.addEventListener('click', () => {
