@@ -16,7 +16,7 @@ function loadPage() {
                     populatePokeCard(pokeData)
                 })
             }
-    })
+        })
 }
 
 const pokeGrid = document.querySelector('.pokemonGrid')
@@ -25,10 +25,11 @@ const newPokemonButton = document.querySelector('.newPokemon')
 
 newPokemonButton.addEventListener('click', () => {
     let pokeName = prompt('pick a Pokename')
-    let newPokemon = new Pokemon (pokeName, 
-        400, 
-        200, 
-        ['javaScript', 'html', 'css']
+    let newPokemon = new Pokemon(
+        pokeName,
+        400,
+        200,
+        ['javaScript', 'html', 'css'],
         ['allNighter', 'homeWork', 'loans'])
     populatePokeCard(newPokemon)
 })
@@ -44,7 +45,7 @@ function populatePokeCard(singlePokemon) {
     pokeScene.className = 'scene'
     let pokeCard = document.createElement('div')
     pokeCard.className = 'card'
-    pokeCard.addEventListener( 'click', function () {
+    pokeCard.addEventListener('click', function () {
         pokeCard.classList.toggle('is-flipped')
     })
 
@@ -78,29 +79,31 @@ function populateCardBack(pokemon) {
 }
 
 function getMoveDetails(pokemonMoves) {
-
     const nonNullMoves = pokemonMoves.filter(async (move) => {
         if (!move.move.url) return
         const moveData = await getAPIData(move.move.url)
-        console.log(movesData.accuracy, moveData.power) 
+        console.log(movesData.accuracy, moveData.power)
         if ((moveData.accuracy && moveData.power) == null) {
             return moveData
         }
     })
+    console.log(nonNullMoves.length)
 }
+
+
 
 function getImageFileName(pokemon) {
     if (pokemon.id < 10) {
         return `00${pokemon.id}`
     } else if (pokemon.id > 9 && pokemon.id < 100) {
         return `0${pokemon.id}`
-    } else if (pokemon.id > 99&& pokemon.id < 810) {
-        return`${pokemon.id}`
+    } else if (pokemon.id > 99 && pokemon.id < 810) {
+        return `${pokemon.id}`
     }
-    //return 'pokeball'
+    return 'pngegg'
 }
 
-function pokemon(name, height, weight, abilities, moves) {
+function Pokemon(name, height, weight, abilities, moves) {
     this.name = name
     this.height = height
     this.weight = weight
@@ -109,5 +112,3 @@ function pokemon(name, height, weight, abilities, moves) {
     this.moves = moves
 }
 
-
-/*https://github.com/fanzeyi/pokemon.json/blob/master/images/517.png*/
