@@ -24,7 +24,7 @@ img {
     display: flex;
     justify-content: center;
     border: rgb(0, 0, 0);
-    background-color: rgb(226, 226, 226);
+    background-color: rgba(255, 255, 255, 0.308);
     margin: 12px;
     width: 175px;
     height: 175px;
