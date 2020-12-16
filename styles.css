@@ -67,6 +67,7 @@ a {
 .projects-grid {
     display: grid;
     justify-content: center;
+    align-items: baseline;
     grid-template-columns: repeat(auto-fit,minmax(275px, 250px));
     grid-gap: 2rem;
     width: 100%;

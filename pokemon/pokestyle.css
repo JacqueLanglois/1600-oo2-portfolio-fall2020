@@ -24,7 +24,7 @@ img {
     display: flex;
     justify-content: center;
     border: rgb(0, 0, 0);
-    background-color: rgba(255, 255, 255, 0.308);
+    background-color: rgba(255, 255, 255, 0.300);
     margin: 12px;
     width: 175px;
     height: 175px;
@@ -52,7 +52,7 @@ p {
     margin: 12px;
     width: 175px;
     height: 40px;
-    background:  rgb(253, 253, 253);
+    background:  rgba(253, 253, 253, 0.300);
 }
 .card.is-flipped {
     transform: rotateY(180deg);
