@@ -1,4 +1,5 @@
 import { senators } from '../Data/senators.js'
+import { removeChildren } from '../utils/index.js'
 
 const senGrid = document.querySelector('.senGrid')
 const seniorButton = document.querySelector('#seniorityButton')

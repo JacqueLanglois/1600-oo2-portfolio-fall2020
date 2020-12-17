@@ -9,7 +9,7 @@ for (let i = 0; i < 7; i++) {
     figImg.src = `https://starwars-visualguide.com/assets/img/films/${i + 1}.jpg`
     let figCaption = document.createElement('figcaption')
 
-    const foundFilm = films.find(film => getLastNumber(films.url) === (i + 1) )
+    const foundFilm = films.find(films => getLastNumber(films.url) === (i + 1).toString())
 
     figCaption.textContent = foundFilm.title
 
