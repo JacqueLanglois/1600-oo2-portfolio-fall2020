@@ -5,13 +5,16 @@ const senGrid = document.querySelector('.senGrid')
 const seniorButton = document.querySelector('#seniorityButton')
 const birthdayButton = document.querySelector('#birthdayButton')
 
+birthdayButton.addEventListener('click', () => {
+    birthdaySort()
+})
 
   function populateSenatorDiv(simpleSenators) {
       removeChildren(senGrid)
       simpleSenators.forEach(senator => {
           let senDiv = document.createElement('div')
           let senFigure = document.createElement('figure')
-          let figImage = document.createElement('img')
+          let figImg = document.createElement('img')
           let figCaption = document.createElement('figCaption')
           let partyIcon = document.createElement('i')
           if (senator.party === 'R') partyIcon.className = 'fas fa-republican'
@@ -33,9 +36,24 @@ const birthdayButton = document.querySelector('#birthdayButton')
           return {
               id:senator.id,
               name: `${senator.first_name}${middleName}${senator.last_name}`,
-              imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govetrack_id}-200px.jpeg`
+              imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-200px.jpeg`,
+              seniority: senators.seniority,
+              missedVoterPct: senators.missed_votes_pct,
+              loyaltyPct: senators.votes_with_part_pct,
+              party: senator.party,
+              date_of_birth: parseInt(senator.date_of_birth, 10)
           }
       })
   }
 
-  populateSenatorDiv(senators)
+  const mostSeniority = getSimpLifiedSenators(senators).reduce((acc, senators) => acc.seniority > senator.senator.seniority ? acc : senator)
+
+  function birthdaySort() {
+      populateSenatorDiv(getSimpLifiedSenators(senators).sort((a, b) => {
+          return a.seniority - b.seniority
+      }))
+  }
+
+  console.log(mostSeniority)
+
+  populateSenatorDiv(getSimpLifiedSenators(senators))
