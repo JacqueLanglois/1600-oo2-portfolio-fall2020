@@ -30,20 +30,20 @@ birthdayButton.addEventListener('click', () => {
       })
   }
    
-  function getSimpLifiedSenators(senatorArray) {
-      return senatorArray.map(senator => {
-          let middleName = senator.middleName ? ` ${senator.middleName} ` : ``
-          return {
-              id:senator.id,
-              name: `${senator.first_name}${middleName}${senator.last_name}`,
-              imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-200px.jpeg`,
-              seniority: senators.seniority,
-              missedVoterPct: senators.missed_votes_pct,
-              loyaltyPct: senators.votes_with_part_pct,
-              party: senator.party,
-              date_of_birth: parseInt(senator.date_of_birth, 10)
-          }
-      })
+  function getSimplifiedSenators(senatorArray) {
+    return senatorArray.map(senator => {
+        let middleName = senator.middle_name ? ` ${senator.middle_name} ` : ` `
+        return {
+            id: senator.id,
+            name: `${senator.first_name}${middleName}${senator.last_name}`,
+            imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-200px.jpeg`,
+            seniority: parseInt(senator.seniority, 10),
+            missedVotesPct: senator.missed_votes_pct,
+            party: senator.party,
+            loyaltyPct: senator.votes_with_party_pct,
+            date_of_birth: senator.date_of_birth
+        }
+    })
   }
 
   const mostSeniority = getSimpLifiedSenators(senators).reduce((acc, senators) => acc.seniority > senator.senator.seniority ? acc : senator)

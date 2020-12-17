@@ -5,3 +5,16 @@ body {
 header {
     text-align: center;
 }
+  .senatorGrid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  figure {
+    margin: .5rem;
+  }
+  
+  figcaption {
+    display: flex;
+    justify-content: space-around;
+  }
