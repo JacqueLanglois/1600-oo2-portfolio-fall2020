@@ -51,7 +51,18 @@ function getSimplifiedSenators(senatorArray) {
     })
 }
 
+const filterSenators = (prop, value) => {
+    return getSimplifiedSenators(senators).filter(senator => {
+        return senator[prop] === value
+    })
+}
+
+const republicans = filterSenators('party', 'R')
+const democrats = filterSenators('party', 'D')
+
 const mostSeniority = getSimplifiedSenators(senators).reduce((acc, senator) => acc.seniority > senator.seniority ? acc : senator)
+
+const missedVotes = getSimplifiedSenators(senators).reduce((acc, senator) => acc.missedVotesPct > senator.missedVotesPct ? acc : senator)
 
 function birthdaySort() {
     populateSenatorDiv(getSimplifiedSenators(senators).sort((a, b) => {
@@ -65,6 +76,6 @@ function senioritySort() {
     }))
 }
 
-console.log(mostSeniority)
+console.log(mostSeniority, missedVotes)
 
 populateSenatorDiv(getSimplifiedSenators(senators))
