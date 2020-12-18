@@ -1,5 +1,5 @@
 body {
-  background-image: linear-gradient(rgb(253, 1, 43) 0%, rgb(0, 0, 255)100%);
+  background-image: linear-gradient(rgb(253, 1, 43) 45%, white, rgb(0, 0, 255)55%);
 }
 
 header {
@@ -7,13 +7,15 @@ header {
 }
   .senGrid {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
+    
   }
   
   figure {
-    margin: .5rem;
+    margin: 1rem;
   }
   
   figcaption {
     display: flex;
+    justify-content: center;
   }
